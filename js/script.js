@@ -18,7 +18,7 @@ timer_button.addEventListener(`click`, function () {
 	} else {
 		for (let i = 0; i < 5; i++) {
 			let li = document.createElement(`li`);
-			li.classList.add(`list-group-item`);
+			li.classList.add(`list-group-item`, `w-100`);
 			let n_random = Math.floor(Math.random() * 100 + 1);
 			random_arr.push(n_random);
 			li.append(n_random);
@@ -26,23 +26,27 @@ timer_button.addEventListener(`click`, function () {
 		}
 		setTimeout(function () {
 			random_list.classList.add(`d-none`);
+		}, 3 * 1000);
+		setTimeout(function () {
 			while (user_arr.length < 5) {
-				let n_user = parseInt(prompt(`Inserisci un numero da 1 a 100`));
+				let n_user = parseInt(prompt(`Inserisci un numero intero da 1 a 100`));
 				user_arr.push(n_user);
 				console.log(n_user, user_arr);
 			}
-		}, 3 * 1000);
+		}, 3.1 * 1000);
 		count++;
 	}
 });
+
+// MILESTONE 4
 
 result_button.addEventListener(`click`, function () {
 	let score = 0;
 	for (let i = 0; i < random_arr.length; i++) {
 		const element = random_arr[i];
 		let li = document.createElement(`li`);
-		li.classList.add(`list-group-item`);
-		if (user_arr.includes(element)) {
+		li.classList.add(`list-group-item`, `w-100`);
+		if (user_arr.includes(element) && !found_arr.includes(element)) {
 			found_arr.push(element);
 			li.append(element);
 			result_list.append(li);
