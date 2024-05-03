@@ -15,10 +15,38 @@
 			integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
 			crossorigin="anonymous"
 			referrerpolicy="no-referrer" />
-		<title>TEMPLATE</title>
+		<title>MEMORY GAME</title>
 	</head>
 	<body>
-		<ul class=""></ul>
+		<div class="container text-center">
+			<h1 class="fw-bold display-3 my-5">MEMORY GAME</h1>
+			<div class="row justify-content-center align-items-center">
+				<div class="col-5">
+					<button class="timer-button btn rounded bg-warning fw-bold fs-3 w-100 py-3">
+						START TIMER
+					</button>
+				</div>
+
+				<div class="col-5">
+					<ul class="random-list list-group list-group-horizontal fs-3 fw-bold"></ul>
+				</div>
+			</div>
+
+			<div class="row justify-content-center align-items-center my-4">
+				<div class="col-5">
+					<button class="result-button btn rounded bg-warning fw-bold fs-3 w-100 py-3">
+						RESULT
+					</button>
+				</div>
+
+				<div class="col-5">
+					<ul class="result-list list-group list-group-horizontal fs-3 fw-bold"></ul>
+				</div>
+			</div>
+			<div class="row my-4">
+				<p id="score" class="fw-bold fs-3"></p>
+			</div>
+		</div>
 		<script type="text/javascript" src="./js/script.js"></script>
 	</body>
 </html>

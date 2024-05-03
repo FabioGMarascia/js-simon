@@ -1,17 +1,53 @@
 // MILESTONE 1 - GENERARE 5 NUMERI CASUALI
-let n_array = [];
-let ul = document.querySelector(`ul`);
-
-for (let i = 0; i < 5; i++) {
-	let li = document.createElement(`li`);
-	let n_random = Math.floor(Math.random() * 100 + 1);
-	n_array.push(n_random);
-	li.append(n_random);
-	ul.append(li);
-}
+let random_arr = [];
+let user_arr = [];
+let found_arr = [];
+let random_list = document.querySelector(`.random-list`);
+let timer_button = document.querySelector(`.timer-button`);
+let result_button = document.querySelector(`.result-button`);
+let result_list = document.querySelector(`.result-list`);
+let score_box = document.querySelector(`#score`);
+let count = 0;
 
 // MILESTONE 2
+// MILESTONE 3
 
-setTimeout(function () {
-	ul.classList.add(`d-none`);
-}, 3 * 1000);
+timer_button.addEventListener(`click`, function () {
+	if (count > 0) {
+		location.reload();
+	} else {
+		for (let i = 0; i < 5; i++) {
+			let li = document.createElement(`li`);
+			li.classList.add(`list-group-item`);
+			let n_random = Math.floor(Math.random() * 100 + 1);
+			random_arr.push(n_random);
+			li.append(n_random);
+			random_list.append(li);
+		}
+		setTimeout(function () {
+			random_list.classList.add(`d-none`);
+			while (user_arr.length < 5) {
+				let n_user = parseInt(prompt(`Inserisci un numero da 1 a 100`));
+				user_arr.push(n_user);
+				console.log(n_user, user_arr);
+			}
+		}, 3 * 1000);
+		count++;
+	}
+});
+
+result_button.addEventListener(`click`, function () {
+	let score = 0;
+	for (let i = 0; i < random_arr.length; i++) {
+		const element = random_arr[i];
+		let li = document.createElement(`li`);
+		li.classList.add(`list-group-item`);
+		if (user_arr.includes(element)) {
+			found_arr.push(element);
+			li.append(element);
+			result_list.append(li);
+			score++;
+		}
+	}
+	score_box.innerText = `Your score is ${score} / 5 !`;
+});
