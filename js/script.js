@@ -8,6 +8,7 @@ let result_button = document.querySelector(`.result-button`);
 let result_list = document.querySelector(`.result-list`);
 let score_box = document.querySelector(`#score`);
 let count = 0;
+let score = 0;
 
 // MILESTONE 2
 // MILESTONE 3
@@ -41,7 +42,6 @@ timer_button.addEventListener(`click`, function () {
 // MILESTONE 4
 
 result_button.addEventListener(`click`, function () {
-	let score = 0;
 	for (let i = 0; i < random_arr.length; i++) {
 		const element = random_arr[i];
 		let li = document.createElement(`li`);
