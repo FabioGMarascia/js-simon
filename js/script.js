@@ -9,3 +9,9 @@ for (let i = 0; i < 5; i++) {
 	li.append(n_random);
 	ul.append(li);
 }
+
+// MILESTONE 2
+
+setTimeout(function () {
+	ul.classList.add(`d-none`);
+}, 3 * 1000);
