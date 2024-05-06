@@ -6,10 +6,5 @@ body {
 }
 
 ul {
-	color: red;
 	margin: 0 auto;
-}
-
-.deb {
-	border: 2px dashed blue;
 }

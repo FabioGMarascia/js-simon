@@ -7,14 +7,14 @@ let timer_button = document.querySelector(`.timer-button`);
 let result_button = document.querySelector(`.result-button`);
 let result_list = document.querySelector(`.result-list`);
 let score_box = document.querySelector(`#score`);
-let count = 0;
+let counter = 0;
 let score = 0;
 
 // MILESTONE 2
 // MILESTONE 3
 
 timer_button.addEventListener(`click`, function () {
-	if (count > 0) {
+	if (counter > 0) {
 		location.reload();
 	} else {
 		for (let i = 0; i < 5; i++) {
@@ -26,7 +26,7 @@ timer_button.addEventListener(`click`, function () {
 			random_list.append(li);
 		}
 		setTimeout(function () {
-			random_list.classList.add(`d-none`);
+			random_list.innerHTML = " ";
 		}, 3 * 1000);
 		setTimeout(function () {
 			while (user_arr.length < 5) {
@@ -35,7 +35,7 @@ timer_button.addEventListener(`click`, function () {
 				console.log(n_user, user_arr);
 			}
 		}, 3.1 * 1000);
-		count++;
+		counter++;
 	}
 });
 
